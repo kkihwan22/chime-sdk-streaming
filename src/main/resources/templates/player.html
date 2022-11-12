@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <!-- 최신버전 Alpha를 이용하고 싶다면 아래 스크립트를 사용 -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/hls.js@alpha"></script> -->
+</head>
+
+<body>
+<video id="video"></video>
+<script>
+    const contextUrl = window.location.origin;
+    const findCookie = () => {
+        const url = contextUrl.concat("/stream/signed-cookies")
+        fetch(url, {
+            method: "GET",
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        })
+            .then(response => response.json())
+            .then(body => {
+                console.log(body);
+                play(body.data.liveId);
+            })
+            .catch(err => console.log("err:" + err));
+    }
+
+    const play =(src) => {
+        let video = document.getElementById('video');
+        // var videoSrc = 'https://stream.dev.taling.me/ivs/v1/639374893179/3VhLasQVYMd1/2021/11/9/10/25/VrZ0EnXMeHEW/media/hls/master.m3u8';
+        //
+        // 우선 HLS를 지원하는지 체크
+        //
+        if (video.canPlayType('application/vnd.apple.mpegurl')) {
+            video.src = src;
+            //
+            // HLS를 지원하지 않는다면 hls.js를 지원
+            //
+        } else if (Hls.isSupported()) {
+            var hls = new Hls();
+            hls.loadSource(src);
+            hls.attachMedia(video);
+        }
+    }
+
+
+    findCookie();
+</script>
+</body>
+</html>

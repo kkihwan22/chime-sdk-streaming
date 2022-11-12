@@ -1,0 +1,10 @@
+POST {{host}}/lives
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+  "title": "[예약] 방만들기",
+  "recCondition": true,
+  "liveType": "MEETING",
+  "startDatetime": "2021-11-12T01:11"
+}

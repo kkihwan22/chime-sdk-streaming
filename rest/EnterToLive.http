@@ -1,0 +1,8 @@
+PUT {{host}}/lives/211220152747001/attendees
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+  "video": "OFF",
+  "audio": "OFF"
+}

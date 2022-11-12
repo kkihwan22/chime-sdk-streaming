@@ -1,0 +1,3 @@
+PATCH {{host}}/internals/lives/220120213036137/close
+Authorization: {{token}}
+Content-Type: application/json

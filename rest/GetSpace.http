@@ -1,0 +1,3 @@
+GET {{host}}/space/VdPvop4TTlWJRzYa1zz46
+Authorization: {{token}}
+Content-Type: application/json

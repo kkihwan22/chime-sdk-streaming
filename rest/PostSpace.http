@@ -1,0 +1,32 @@
+POST {{host}}/internals/space
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+  "title": "테스트",
+  "expiredAt": "2021-11-29T08:34:13.768Z",
+  "managers": [
+    {
+      "id": 320206,
+      "nickname": "https://taling.me",
+      "profileImageUrl": "https://taling.me",
+      "profileThumbnailUrl": "https://taling.me"
+    }
+  ],
+  "referenceId": "string",
+  "startedAt": "2021-11-29T08:34:13.768Z",
+  "tutor": {
+    "id": 408697,
+    "nickname": "nickname",
+    "profileImageUrl": "https://taling.me",
+    "profileThumbnailUrl": "https://taling.me"
+  },
+  "users": [
+    {
+      "id": 546565,
+      "nickname": "https://taling.me",
+      "profileImageUrl": "https://taling.me",
+      "profileThumbnailUrl": "https://taling.me"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+ffmpeg -i "https://stream.taling.me/ivs/v1/869998438082/q3MMifgqcPAX/2022/5/12/9/48/2oGS1rbflQdl/media/hls/master.m3u8" -c copy -bsf:a aac_adtstoasc "coin.mp4"

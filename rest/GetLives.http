@@ -1,0 +1,3 @@
+GET {{host}}/lives
+Authorization: {{token}}
+Content-Type: application/json

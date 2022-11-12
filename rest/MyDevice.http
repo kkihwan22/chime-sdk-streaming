@@ -1,0 +1,7 @@
+PATCH {{host}}/lives/211207201941048/actions/video_unlock
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+  "userId": 406042
+}

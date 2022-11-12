@@ -1,0 +1,3 @@
+PUT {{host}}/lives/211220152747001/waiting-room
+Authorization: {{token}}
+Content-Type: application/json

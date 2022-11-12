@@ -1,0 +1,6 @@
+GET {{host}}/lives/220120213036137/attendees
+Authorization: {{token}}
+Content-Type: application/json
+
+
+

@@ -1,0 +1,6 @@
+GET {{host}}/stream/signed-cookies
+Authorization: {{token}}
+Content-Type: application/json
+
+
+

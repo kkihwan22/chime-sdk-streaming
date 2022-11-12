@@ -1,0 +1,9 @@
+POST {{host}}/lives
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+  "title": "ECS 에러 관련 테스트",
+  "liveMethod": "INTERACTION",
+  "recCondition": true
+}

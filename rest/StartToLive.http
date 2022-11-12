@@ -1,0 +1,3 @@
+PATCH {{host}}/lives/211220152747001/start
+Authorization: {{token}}
+Content-Type: application/json

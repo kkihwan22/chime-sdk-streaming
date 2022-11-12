@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>~Taling Live~</title>
+    <link rel="shortcut icon" href="https://front-img.taling.me/Content/app3/images/favicon.ico">
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css">
+</head>
+<body>
+
+<div class="jumbotron text-center">
+    <h1>탈잉 라이브</h1>
+    <p>탈잉 온라인 라이브 서비스에 오신걸 환영합니다.</p>
+</div>
+
+<div class="container" style="margin-bottom: 1rem;">
+    <input type="hidden" id="hidden-context" th:value="${context}">
+    <input type="hidden" id="hidden-front" th:value="${front}">
+    <input type="hidden" id="hidden-cookie-name" th:value="${cookieName}">
+    <h2>방 만들기</h2>
+    <form action="/action_page.php">
+        <div class="row">
+            <div class="col-sm-12">
+                <label class="radio-inline">
+                    <input type="radio" name="rb-type" value="INSTANCE" checked="checked"> [즉시생성]
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="rb-type" value="MEETING"> [예약생성]
+                </label>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 10px">
+            <div class="col-sm-12">
+                <input type="datetime-local" id="start-dt" class="form-control" disabled>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 10px">
+            <div class="col-sm-6">
+                <div style="margin-bottom: 5px"> 라이브 방식을 선택하세요. </div>
+                <label class="radio-inline">
+                    <input type="radio" name="rb-live-method" value="INTERACTION" checked="checked"> INTERACTIVE
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" name="rb-live-method" value="WEBINAR"> WEBINAR
+                </label>
+            </div>
+        </div>
+
+        <div class="row" style="margin-top: 10px">
+            <div class="col-sm-12">
+                <div class="form-inline">
+                    <div class="input-group">
+                        <input type="text" id="title" class="form-control" placeholder="생성할 미팅 제목을 입력해주세요."
+                               aria-describedby="btn-create">
+                        <span class="input-group-addon" id="btn-create">생성하기</span>
+                    </div>
+                    <div class="checkbox" style="margin-left: 15px">
+                        <label>
+                            <input id="cb-rec" type="checkbox" value="">
+                            화면녹화 (체크하시면, 회의가 녹화됩니다.)
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="container">
+    <h2>클래스 목록</h2>
+    <p></p>
+    <table class="table table-striped" id="tbl-lives">
+        <thead>
+        <tr>
+            <th>No.</th>
+            <th>라이브 제목</th>
+            <th>입장</th>
+            <th>라이브 정보 확인하기</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="js/lives.js"></script>
+</html>

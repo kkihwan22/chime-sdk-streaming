@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>~Taling Live~</title>
+    <link rel="shortcut icon" href="https://front-img.taling.me/Content/app3/images/favicon.ico">
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css">
+</head>
+<body>
+
+<div class="jumbotron text-center">
+    <h1>탈잉 라이브</h1>
+    <p>탈잉 온라인 라이브 서비스에 오신걸 환영합니다.</p>
+</div>
+
+<div class="container" style="margin-bottom: 1rem;">
+    <input type="hidden" id="hidden-context" th:value="${context}">
+    <input type="hidden" id="hidden-front" th:value="${front}">
+    <input type="hidden" id="hidden-cookie-name" th:value="${cookieName}">
+    <input type="hidden" id="hidden-liveId" th:value="${liveId}">
+    <h2>라이브 방 정보</h2>
+    <table class="table table-striped" id="tbl-live-info">
+        <thead>
+        <tr>
+            <th>라이브 아이디</th>
+            <th>제목</th>
+            <th>진행방식</th>
+            <th>튜터 아이디</th>
+            <th>튜터 닉네임</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+<div class="container">
+    <h2>Ivs 정보</h2>
+    <p></p>
+    <table class="table table-striped" id="tbl-ivs-info">
+        <thead>
+        <tr>
+            <th>channelArn</th>
+            <th>channelName</th>
+            <th>ingestEndpoint</th>
+            <th>streamUrl</th>
+            <th>streamKeyArn</th>
+            <th>streamKeyValue</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+<div class="container">
+    <h2>참석자 정보</h2>
+    <p></p>
+    <table class="table table-striped" id="tbl-attendees-info">
+        <thead>
+        <tr>
+            <th>No.</th>
+            <th>아이디</th>
+            <th>닉네임</th>
+            <th>타입</th>
+            <th>비디오 상태</th>
+            <th>마이크 상태</th>
+            <th>화면공유 상태</th>
+            <th>손들기 상태</th>
+        </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="/js/liveInfo.js"></script>
+</html>

@@ -1,0 +1,3 @@
+PATCH {{host}}/lives/211202171321038/exit
+Authorization: {{token}}
+Content-Type: application/json

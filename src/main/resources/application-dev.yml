@@ -1,0 +1,69 @@
+server:
+  port: 8080
+
+logging:
+  level:
+    root: warn
+    org.springframework.web: warn
+    me.taling.live: debug
+    me.taling.live.infra.feign: debug
+
+redis:
+  # host: ec2-3-36-86-81.ap-northeast-2.compute.amazonaws.com
+  host: taling-live-dev-redis.k7oop8.0001.apn2.cache.amazonaws.com
+  port: 6379
+  publish-host: taling-messaging-prototype-redis.k7oop8.0001.apn2.cache.amazonaws.com
+  publish-port: 6379
+
+queue:
+  lesson-create: live-classroom-create-request-queue
+
+# 내부(탈잉)서버 endpoints
+internal-endpoints:
+  taling-web: https://dev.taling.me
+  taling-live-front: https://live-front.dev.taling.me
+  taling-message: https://ch.dev.taling.me
+  taling-stream: https://stream.dev.taling.me
+
+# external-endpoints:
+
+services:
+  reference:
+    aws:
+      app-key: 51f3bd1d647cfd3c22242cdaa092e11e
+      secret-key: 180c52ddfa7067677004481adba6c6dead4131fc8ffcf9915ed9bff6c7fd67cf
+    taling-web:
+      app-key: 51f3bd1d647cfd3c22242cdaa092e11e
+      secret-key: 180c52ddfa7067677004481adba6c6dead4131fc8ffcf9915ed9bff6c7fd67cf
+    live-recorder:
+      app-key: 51f3bd1d647cfd3c22242cdaa092e11e
+      secret-key: 180c52ddfa7067677004481adba6c6dead4131fc8ffcf9915ed9bff6c7fd67cf
+
+aws:
+  ivs:
+    channel-type: STANDARD
+    channel-latency-mode: LOW
+    authorized: false
+    recording-configuration-arn: arn:aws:ivs:us-east-1:639374893179:recording-configuration/CriuG27kwft6
+    origin-source:
+      prefix: https://ivs-live-recordings.s3.amazonaws.com
+      postfix: /media/hls/master.m3u8
+
+feign:
+  message:
+    client-id: FWDNuKfsx_K161PBfwWC27oHspce55bwWUMrwPKbDRFV2oCMIx
+    client-secret: z6d1Hh0zONgeb1HHZ8KULr47oBc8S95QGNuk-Q5gdxtpIbXa_n
+
+
+cookie-name: TalingDevSessId
+
+# bot ecs
+bot:
+  ecs-cluster-arn: arn:aws:ecs:ap-northeast-2:639374893179:cluster/taling-live-bot-cluster
+  security-groups: sg-00e903813f6772c9d
+  subnets: subnet-14132158,subnet-c0230f9c,subnet-fda61d86,subnet-06dd136d
+
+springfox:
+  documentation:
+    swagger-ui:
+      enabled: true
